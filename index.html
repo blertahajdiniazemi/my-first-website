@@ -1,10 +1,174 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blerta | Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f9fc;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px 40px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h2 {
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      background: linear-gradient(to right, #dbeafe, #eff6ff);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111827;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hi, I'm Blerta 👋</h1>
-  <p>This is my first real website 🚀</p>
+
+  <header>
+    <nav>
+      <h2>Blerta</h2>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to My Website</h1>
+    <p>Hello, I'm Blerta. This is my personal homepage where I can share who I am, what I do, and how to contact me.</p>
+    <a href="#about" class="btn">Learn More</a>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      I’m an engineer and I’m learning how to build websites. This homepage is my first step in creating my own space on the internet.
+    </p>
+  </section>
+
+  <section class="section" id="services">
+    <h2>What I Do</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Web Learning</h3>
+        <p>I’m building my skills in HTML, CSS, and website design.</p>
+      </div>
+      <div class="card">
+        <h3>Projects</h3>
+        <p>I can share my work, ideas, and future portfolio projects here.</p>
+      </div>
+      <div class="card">
+        <h3>Contact</h3>
+        <p>This website can help people learn more about me and reach out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      Email: yourname@example.com
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Blerta. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
