@@ -4,142 +4,191 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blerta Ankande</title>
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #f7f8fc; color: #222; line-height: 1.5; }
-    header { background: #111827; color: white; padding: 18px 40px; }
-    .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fc;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 40px;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .logo { font-size: 26px; font-weight: bold; }
-    .nav-links { display: flex; gap: 18px; }
-    .nav-links a { color: white; text-decoration: none; font-weight: bold; }
 
-    .hero { background: linear-gradient(135deg, #dbeafe, #eef2ff); padding: 80px 20px; text-align: center; }
-    .hero h1 { font-size: 48px; margin-bottom: 16px; }
-    .hero p { font-size: 20px; margin-bottom: 28px; }
+    .nav-links a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-    .btn { padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: bold; }
-    .btn-primary { background: #2563eb; color: white; }
-    .btn-secondary { background: white; color: #2563eb; border: 2px solid #2563eb; }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #dbeafe, #eef2ff);
+    }
 
-    .section { max-width: 1200px; margin: auto; padding: 60px 20px; }
-    .section h2 { text-align: center; font-size: 34px; margin-bottom: 14px; }
-    .section-subtitle { text-align: center; margin-bottom: 40px; }
+    .hero h1 { font-size: 44px; margin-bottom: 10px; }
+    .hero p { font-size: 20px; margin-bottom: 20px; }
 
-    .items-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-    .card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .btn {
+      background: #2563eb;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-    .card-image { height: 190px; background: #dbeafe; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-    .card-body { padding: 20px; }
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
 
-    .status { font-size: 12px; padding: 6px 10px; border-radius: 999px; display: inline-block; margin-bottom: 12px; }
-    .status-live { background: #dcfce7; color: #166534; }
-    .status-sold { background: #fee2e2; color: #991b1b; }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
 
-    .price { font-weight: bold; margin-bottom: 8px; }
-    .offer { margin-bottom: 16px; }
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
 
-    .small-btn { padding: 10px 14px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: bold; }
-    .offer-btn { background: #2563eb; color: white; }
-    .details-btn { background: #eef2ff; color: #1d4ed8; }
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
 
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .step { background: white; padding: 24px; border-radius: 14px; text-align: center; }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-    .step-number { background: #2563eb; color: white; width: 42px; height: 42px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .card-body {
+      padding: 18px;
+    }
 
-    .cta { background: #111827; color: white; text-align: center; padding: 70px 20px; }
-    footer { background: #0f172a; color: #cbd5e1; text-align: center; padding: 24px; }
+    .status {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .status-live {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status-sold {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 6px;
+    }
+
+    .offer { margin-bottom: 12px; }
+
+    .btn-small {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #2563eb;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="nav">
     <div class="logo">Blerta Ankande</div>
     <div class="nav-links">
-      <a href="#home">Kreu</a>
       <a href="#items">Produktet</a>
-      <a href="#how-it-works">Si Funksionon</a>
-      <a href="#contact">Kontakt</a>
     </div>
   </div>
 </header>
 
-<section class="hero" id="home">
-  <h1>Bli, Oferto dhe Fito</h1>
-  <p>Mirë se vini në Blerta Ankande — një platformë ku produktet publikohen dhe blerësit bëjnë oferta. Kur oferta pranohet, produkti shitet.</p>
-  <a href="#items" class="btn btn-primary">Shiko Produktet</a>
+<section class="hero">
+  <h1>Bli dhe Bëj Oferta</h1>
+  <p>Platformë për shitje ku mund të bësh oferta për produkte.</p>
+  <a href="#items" class="btn">Shiko Produktet</a>
 </section>
 
 <section class="section" id="items">
-  <h2>Produktet Kryesore</h2>
-  <p class="section-subtitle">Shembuj produktesh — mund t’i zëvendësosh me të tuat.</p>
+  <h2>Produktet</h2>
 
   <div class="items-grid">
 
     <div class="card">
-      <div class="card-image">Karrige</div>
+      <img src="https://images.unsplash.com/photo-1582582429416-97b6dfe0f87d" alt="">
       <div class="card-body">
         <span class="status status-live">Në Ankand</span>
         <h3>Karrige Druri</h3>
-        <p class="price">Çmimi fillestar: €80</p>
-        <p class="offer">Oferta më e lartë: €110</p>
-        <a href="#" class="small-btn offer-btn">Bëj Ofertë</a>
+        <p class="price">€80</p>
+        <p class="offer">Oferta: €110</p>
+        <a href="#" class="btn-small">Bëj Ofertë</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-image">Çantë</div>
+      <img src="https://images.unsplash.com/photo-1585386959984-a41552231658" alt="">
       <div class="card-body">
         <span class="status status-live">Në Ankand</span>
-        <h3>Çantë Luksoze</h3>
-        <p class="price">Çmimi fillestar: €120</p>
-        <p class="offer">Oferta më e lartë: €150</p>
-        <a href="#" class="small-btn offer-btn">Bëj Ofertë</a>
+        <h3>Çantë Mode</h3>
+        <p class="price">€120</p>
+        <p class="offer">Oferta: €150</p>
+        <a href="#" class="btn-small">Bëj Ofertë</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-image">Orë</div>
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="">
       <div class="card-body">
         <span class="status status-sold">E Shitur</span>
         <h3>Orë Smart</h3>
-        <p class="price">Shitur për: €140</p>
+        <p class="price">€140</p>
       </div>
     </div>
 
   </div>
-</section>
-
-<section class="section" id="how-it-works">
-  <h2>Si Funksionon</h2>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-number">1</div>
-      <p>Publiko produktin</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">2</div>
-      <p>Prano oferta</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">3</div>
-      <p>Zgjidh ofertën më të mirë</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">4</div>
-      <p>Shit produktin</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta" id="contact">
-  <h2>Fillo të Shesësh Sot</h2>
-  <p>Krijo produkte, merr oferta dhe shiti tek blerësi më i mirë.</p>
 </section>
 
 <footer>
