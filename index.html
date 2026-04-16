@@ -6,64 +6,239 @@
   <title>Blerta Ankande</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #f7f8fc; color: #222; line-height: 1.5; }
-    header { background: #111827; color: white; padding: 18px 40px; }
-    .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .logo { font-size: 26px; font-weight: bold; }
-    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
-    .nav-links a { color: white; text-decoration: none; font-weight: bold; }
 
-    .hero { background: linear-gradient(135deg, #dbeafe, #eef2ff); padding: 80px 20px; text-align: center; }
-    .hero h1 { font-size: 48px; margin-bottom: 16px; }
-    .hero p { font-size: 20px; margin-bottom: 28px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fc;
+      color: #222;
+      line-height: 1.5;
+    }
 
-    .btn { display: inline-block; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; }
-    .btn-primary { background: #2563eb; color: white; }
-    .btn-secondary { background: white; color: #2563eb; border: 2px solid #2563eb; }
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 40px;
+    }
 
-    .section { max-width: 1200px; margin: auto; padding: 60px 20px; }
-    .section h2 { text-align: center; font-size: 34px; margin-bottom: 14px; }
-    .section-subtitle { text-align: center; margin-bottom: 40px; color: #555; }
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
 
-    .items-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-    .card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-    .card-image { width: 100%; height: 190px; object-fit: cover; }
-    .card-body { padding: 20px; }
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
 
-    .status { font-size: 12px; padding: 6px 10px; border-radius: 999px; display: inline-block; margin-bottom: 12px; font-weight: bold; }
-    .status-live { background: #dcfce7; color: #166534; }
-    .status-sold { background: #fee2e2; color: #991b1b; }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-    .card h3 { margin-bottom: 10px; }
-    .price { font-weight: bold; margin-bottom: 8px; }
-    .offer { margin-bottom: 16px; color: #444; }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-    .card-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-    .small-btn {
-      padding: 10px 14px;
+    .hero {
+      background: linear-gradient(135deg, #dbeafe, #eef2ff);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 28px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .btn, .small-btn {
+      display: inline-block;
+      padding: 12px 18px;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 14px;
       font-weight: bold;
       border: none;
       cursor: pointer;
+      font-size: 14px;
     }
-    .offer-btn { background: #2563eb; color: white; }
-    .details-btn { background: #eef2ff; color: #1d4ed8; }
-    .accept-btn { background: #16a34a; color: white; }
 
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .step { background: white; padding: 24px; border-radius: 14px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .btn-primary, .offer-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .btn-secondary, .details-btn {
+      background: white;
+      color: #2563eb;
+      border: 2px solid #2563eb;
+    }
+
+    .accept-btn {
+      background: #16a34a;
+      color: white;
+    }
+
+    .delete-btn {
+      background: #dc2626;
+      color: white;
+    }
+
+    .filter-btn {
+      background: #eef2ff;
+      color: #1d4ed8;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .status {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .status-live {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status-sold {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .offer {
+      margin-bottom: 16px;
+      color: #444;
+    }
+
+    .card-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
     .step-number {
-      background: #2563eb; color: white; width: 42px; height: 42px;
-      border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
-      margin-bottom: 14px; font-weight: bold;
+      background: #2563eb;
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-weight: bold;
     }
 
-    .cta { background: #111827; color: white; text-align: center; padding: 70px 20px; margin-top: 20px; }
-    .cta p { max-width: 700px; margin: 16px auto 0; color: #d1d5db; }
+    .cta {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      margin-top: 20px;
+    }
 
-    footer { background: #0f172a; color: #cbd5e1; text-align: center; padding: 24px; }
+    .cta p {
+      max-width: 700px;
+      margin: 16px auto 0;
+      color: #d1d5db;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 24px;
+    }
 
     .modal {
       display: none;
@@ -73,12 +248,13 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
+      z-index: 1000;
     }
 
     .modal-content {
       background: white;
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       border-radius: 14px;
       padding: 24px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -94,7 +270,8 @@
       font-weight: bold;
     }
 
-    .modal-content input {
+    .modal-content input,
+    .modal-content select {
       width: 100%;
       padding: 12px;
       border: 1px solid #d1d5db;
@@ -134,16 +311,22 @@
 <section class="hero" id="home">
   <h1>Bli, Oferto dhe Fito</h1>
   <p>Mirë se vini në Blerta Ankande — një platformë ku produktet publikohen dhe blerësit bëjnë oferta. Kur oferta pranohet, produkti shitet.</p>
-  <a href="#items" class="btn btn-primary">Shiko Produktet</a>
 </section>
 
 <section class="section" id="items">
   <h2>Produktet Kryesore</h2>
-  <p class="section-subtitle">Kliko “Bëj Ofertë” për të provuar faqen interaktive.</p>
+  <p class="section-subtitle">Shto produkte, bëj oferta, prano oferta dhe filtro listën.</p>
 
-  <div class="items-grid">
-    <div class="card" data-product="Karrige Druri">
-      <img class="card-image" src="https://images.unsplash.com/photo-1503602642458-232111445657" alt="Karrige druri">
+  <div class="toolbar">
+    <button class="btn btn-primary" onclick="openAddModal()">Shto Produkt</button>
+    <button class="btn filter-btn" onclick="filterProducts('all')">Të gjitha</button>
+    <button class="btn filter-btn" onclick="filterProducts('live')">Në ankand</button>
+    <button class="btn filter-btn" onclick="filterProducts('sold')">Të shitura</button>
+  </div>
+
+  <div class="items-grid" id="productsGrid">
+    <div class="card" data-product="Karrige Druri" data-status="live">
+      <img class="card-image" src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80" alt="Karrige druri">
       <div class="card-body">
         <span class="status status-live">Në Ankand</span>
         <h3>Karrige Druri</h3>
@@ -152,12 +335,13 @@
         <div class="card-buttons">
           <button class="small-btn offer-btn" onclick="openOfferModal(this)">Bëj Ofertë</button>
           <button class="small-btn accept-btn" onclick="acceptOffer(this)">Prano Ofertën</button>
+          <button class="small-btn delete-btn" onclick="removeProduct(this)">Hiq Produktin</button>
         </div>
       </div>
     </div>
 
-    <div class="card" data-product="Çantë Luksoze">
-      <img class="card-image" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3" alt="Çantë luksoze">
+    <div class="card" data-product="Çantë Luksoze" data-status="live">
+      <img class="card-image" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" alt="Çantë luksoze">
       <div class="card-body">
         <span class="status status-live">Në Ankand</span>
         <h3>Çantë Luksoze</h3>
@@ -166,17 +350,21 @@
         <div class="card-buttons">
           <button class="small-btn offer-btn" onclick="openOfferModal(this)">Bëj Ofertë</button>
           <button class="small-btn accept-btn" onclick="acceptOffer(this)">Prano Ofertën</button>
+          <button class="small-btn delete-btn" onclick="removeProduct(this)">Hiq Produktin</button>
         </div>
       </div>
     </div>
 
-    <div class="card" data-product="Orë Smart">
-      <img class="card-image" src="https://images.unsplash.com/photo-1518441902113-cb3e0b4c8d1e" alt="Orë smart">
+    <div class="card" data-product="Orë Smart" data-status="sold">
+      <img class="card-image" src="https://images.unsplash.com/photo-1518441902113-cb3e0b4c8d1e?auto=format&fit=crop&w=900&q=80" alt="Orë smart">
       <div class="card-body">
         <span class="status status-sold">E Shitur</span>
         <h3>Orë Smart</h3>
         <p class="price">Shitur për: €140</p>
         <p class="offer">Ky produkt nuk pranon më oferta.</p>
+        <div class="card-buttons">
+          <button class="small-btn delete-btn" onclick="removeProduct(this)">Hiq Produktin</button>
+        </div>
       </div>
     </div>
   </div>
@@ -206,7 +394,7 @@
 
 <section class="cta" id="contact">
   <h2>Fillo të Shesësh Sot</h2>
-  <p>Kjo është një demo interaktive. Hapi tjetër mund të jetë një version i vërtetë me llogari, databazë dhe oferta reale.</p>
+  <p>Kjo është një demo interaktive. Mund ta përdorësh për të kuptuar si do të duket faqja jote.</p>
 </section>
 
 <footer>
@@ -233,8 +421,31 @@
   </div>
 </div>
 
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <h3>Shto Produkt të Ri</h3>
+
+    <label for="newProductName">Emri i produktit</label>
+    <input type="text" id="newProductName" placeholder="p.sh. Tavolinë Moderne">
+
+    <label for="newProductPrice">Çmimi fillestar</label>
+    <input type="number" id="newProductPrice" placeholder="p.sh. 90">
+
+    <label for="newProductImage">Linku i fotos</label>
+    <input type="text" id="newProductImage" placeholder="Vendos linkun e fotos">
+
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="addProduct()">Ruaj Produktin</button>
+      <button class="btn btn-secondary" onclick="closeAddModal()">Mbyll</button>
+    </div>
+
+    <div class="message" id="addMessage"></div>
+  </div>
+</div>
+
 <script>
   let currentCard = null;
+  let currentFilter = "all";
 
   function openOfferModal(button) {
     currentCard = button.closest(".card");
@@ -260,7 +471,11 @@
       return;
     }
 
-    currentCard.querySelector(".offer-value").textContent = "€" + amount;
+    const offerValue = currentCard.querySelector(".offer-value");
+    if (offerValue) {
+      offerValue.textContent = "€" + amount;
+    }
+
     message.textContent = "Oferta u dërgua me sukses nga " + name + ".";
   }
 
@@ -268,6 +483,8 @@
     const card = button.closest(".card");
     const status = card.querySelector(".status");
     const offerText = card.querySelector(".offer-value");
+    const offerParagraph = card.querySelector(".offer");
+    const buttons = card.querySelector(".card-buttons");
 
     if (!offerText) return;
 
@@ -275,17 +492,96 @@
     status.classList.remove("status-live");
     status.classList.add("status-sold");
 
-    const offerParagraph = card.querySelector(".offer");
     offerParagraph.textContent = "Shitur për: " + offerText.textContent;
+    card.setAttribute("data-status", "sold");
 
-    const buttons = card.querySelector(".card-buttons");
-    buttons.innerHTML = "";
+    buttons.innerHTML = '<button class="small-btn delete-btn" onclick="removeProduct(this)">Hiq Produktin</button>';
+
+    filterProducts(currentFilter);
+  }
+
+  function removeProduct(button) {
+    const card = button.closest(".card");
+    card.remove();
+  }
+
+  function openAddModal() {
+    document.getElementById("addModal").style.display = "flex";
+    document.getElementById("newProductName").value = "";
+    document.getElementById("newProductPrice").value = "";
+    document.getElementById("newProductImage").value = "";
+    document.getElementById("addMessage").textContent = "";
+  }
+
+  function closeAddModal() {
+    document.getElementById("addModal").style.display = "none";
+  }
+
+  function addProduct() {
+    const name = document.getElementById("newProductName").value.trim();
+    const price = document.getElementById("newProductPrice").value.trim();
+    const image = document.getElementById("newProductImage").value.trim();
+    const message = document.getElementById("addMessage");
+
+    if (!name || !price || !image) {
+      message.textContent = "Ju lutem plotësoni të gjitha fushat.";
+      return;
+    }
+
+    const grid = document.getElementById("productsGrid");
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.setAttribute("data-product", name);
+    card.setAttribute("data-status", "live");
+
+    card.innerHTML = `
+      <img class="card-image" src="${image}" alt="${name}">
+      <div class="card-body">
+        <span class="status status-live">Në Ankand</span>
+        <h3>${name}</h3>
+        <p class="price">Çmimi fillestar: €${price}</p>
+        <p class="offer">Oferta më e lartë: <span class="offer-value">€${price}</span></p>
+        <div class="card-buttons">
+          <button class="small-btn offer-btn" onclick="openOfferModal(this)">Bëj Ofertë</button>
+          <button class="small-btn accept-btn" onclick="acceptOffer(this)">Prano Ofertën</button>
+          <button class="small-btn delete-btn" onclick="removeProduct(this)">Hiq Produktin</button>
+        </div>
+      </div>
+    `;
+
+    grid.appendChild(card);
+    message.textContent = "Produkti u shtua me sukses.";
+    filterProducts(currentFilter);
+  }
+
+  function filterProducts(type) {
+    currentFilter = type;
+    const cards = document.querySelectorAll("#productsGrid .card");
+
+    cards.forEach(card => {
+      const status = card.getAttribute("data-status");
+
+      if (type === "all") {
+        card.style.display = "block";
+      } else if (type === "live") {
+        card.style.display = status === "live" ? "block" : "none";
+      } else if (type === "sold") {
+        card.style.display = status === "sold" ? "block" : "none";
+      }
+    });
   }
 
   window.onclick = function(event) {
-    const modal = document.getElementById("offerModal");
-    if (event.target === modal) {
+    const offerModal = document.getElementById("offerModal");
+    const addModal = document.getElementById("addModal");
+
+    if (event.target === offerModal) {
       closeOfferModal();
+    }
+
+    if (event.target === addModal) {
+      closeAddModal();
     }
   }
 </script>
